@@ -1,0 +1,38 @@
+.heading {
+  background-color: #191c24;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  font-size: 30px;
+  color: #60c2cf;
+  margin: 0;
+}
+.containerCls {
+  margin: 2% auto;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  border: 1px;
+}
+.fw {
+  font-weight: bold;
+}
+
+.noProjects {
+  margin: 5% auto;
+  text-align: center;
+  padding: 5px;
+  background-color: #313131;
+  color: #ffffff;
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.errors {
+  color: red;
+  margin-top: -15px;
+}
+
+.tablebg {
+  background-color: #191c24;
+}

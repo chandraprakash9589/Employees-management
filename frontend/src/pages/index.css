@@ -1,0 +1,101 @@
+
+.form-label {
+  margin-bottom: 0.5rem;
+  color: cadetblue;
+}
+.new{
+  background-color: #191c24;  
+  transition: 1s;
+  padding-inline: 20px;
+  padding-block: 35px;
+  border-radius: 0 0px 20px 20px;
+}
+
+.new:hover{
+  box-shadow: 0 0 5px #60c2cf;
+  transition: 1s;
+}
+.text-white {
+  color:  #bdb9b9  !important;
+}
+
+td{
+  color: #bdb9b9 !important;
+}
+
+th{
+  color: cadetblue;
+}
+
+h6{
+  color: #9ba1c7;
+}
+
+.border-color{
+  border: 1px solid  rgb(72, 78, 78);
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.form-select{
+  color: #bdb9b9 !important;
+}
+
+.form-control{
+  color: #bdb9b9 !important;
+}
+
+.borders{
+  padding-block: 25px;
+  border-top: 1px solid #626577;
+  border-bottom: 1px solid #626577;
+}
+.session{
+  width: 73px;
+  text-align: center;
+  border-radius: 3px; 
+}
+.from-session{
+  color:rgb(91, 160, 163) ;
+}
+.to-session{
+  color: rgb(86, 124, 153);
+}
+.container{
+  width: 90%;
+  font-size: 15px;
+}
+
+.css-166bipr-Input{
+  color: #bdb9b9 !important;
+}
+
+.css-1wa756u-control{
+  box-shadow: 0 0 0 1px #d36c6c !important;
+}
+.css-1wa756u-control:focus{
+  border-color: #d36c6c !important;
+}
+.css-1wa756u-control:hover{
+  border-color: #d36c6c !important;
+}
+
+.css-pf9847-control:focus{
+  border-color: #d36c6c !important;
+}
+
+.css-pf9847-control:hover{
+  border-color: #141414 !important;
+}
+
+.form-check-input{
+  box-shadow: 0 0 0 1px #413f3f !important;
+}
+
+@media (min-width: 900px){
+
+  .container{
+    width: 80%;
+  }
+}
+/* ------------------------------------------------------------------ */

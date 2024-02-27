@@ -1,0 +1,16 @@
+.testinput {
+  width: 100%;
+  background-color: black;
+  color: #ccc;
+  padding: 7px;
+  border: 2px;
+  border-radius: 5px;
+  padding-left: 25px;
+}
+
+.iconStyle {
+  position: absolute;
+  z-index: 4;
+  margin-block: 8px;
+  margin-left: 2px;
+}

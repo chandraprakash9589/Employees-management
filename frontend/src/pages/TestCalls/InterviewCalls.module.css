@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.backg {
+  background-color: #191c24;
+}
+.createheading {
+  color: #60c2cf;
+  padding: 8px 10px;
+  margin: 0;
+  border-radius: 3px 3px 0 0;
+  background-color: #191c24;
+}
+
+.interviewHeading {
+  background-color: #191c24;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+}
+
+#cv::file-selector-button {
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  padding: 0.5em;
+  border: thin solid white;
+  border-radius: 3px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.error {
+  color: red;
+}

@@ -1,0 +1,23 @@
+.headOne {
+  background-color: #191c24;
+  padding-top: 20px;
+  text-align: center;
+  margin: 0;
+  color: #60c2cf;
+  border: 1px;
+  border-radius: 20px 20px 0 0;
+}
+.containerOne {
+  margin: 3rem auto 2%;
+  max-width: 590px;
+  width: 100%;
+}
+.fw {
+  font-weight: bold;
+}
+
+.backg {
+  background-color: #191c24;
+  border: 1px;
+  border-radius: 0 0 20px 20px;
+}

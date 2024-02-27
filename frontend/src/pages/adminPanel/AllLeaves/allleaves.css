@@ -1,0 +1,69 @@
+.card {
+  background-color: #1f212c;
+  margin: 0;
+  padding: 0;
+}
+
+.btnApp {
+  background-color: #87c9a2;
+  color: #32913f;
+  font-weight: bold;
+  margin: 0;
+  padding-block: 3px;
+}
+.btnDny {
+  background-color: #d48989;
+  color: #a81a1a;
+  font-weight: bold;
+  margin-left: 10px;
+  padding-block: 3px;
+}
+
+.container .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 15px;
+}
+
+.container .box-container .box {
+  transition: 0.3s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.container .box-container .box:hover {
+  transition: 0.3s;
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .box {
+    margin-inline: auto;
+  }
+}
+
+.search-control{
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 3px solid #080808;
+  background-color: #191c24;
+}
+.search-control:focus{
+  border: none;
+  border-bottom: 3px solid #080808;
+  background-color: #191c24;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.search-icon:hover{
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+.search-icon{
+  margin-right: 10px;
+  transition: 0.3s;
+}

@@ -1,0 +1,26 @@
+.wrapper {
+  border-radius: 2px;
+}
+
+.editor {
+  background-color: #000000;
+  color: #bdb9b9 !important;
+  margin: 0;
+  padding: 0px 10px;
+}
+
+.toolbar{
+  background: #000;
+  border: none;
+  margin: 0;
+}
+
+.icon:hover{
+  transition: 0.5s;
+  transform: scale(1.4);
+}
+
+.icon{
+  transition: 0.5s;
+
+}
