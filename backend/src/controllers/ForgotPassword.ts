@@ -5,7 +5,9 @@ import bcrypt from "bcryptjs";
 import User from "../models/User";
 
 const sendForgotEmailController = {
+  
   async createForgotEmail(req: Request, res: Response) {
+    const BaseURL =process.env.BaseUrl;
     const { email } = req.body;
     try {
       const oldUser = await User.findOne({ email });
@@ -23,13 +25,13 @@ const sendForgotEmailController = {
         }
       );
 
-      const link = `http://localhost:3000/forgotPass/reset-password/${oldUser._id}/${token}`;
+      const link = `${BaseURL}/forgotPass/reset-password/${oldUser._id}/${token}`;
 
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "portal9589@gmail.com",
-          pass: "tskm ljfm qauv oskz",
+          user: process.env.user_Credential,
+          pass: process.env.pass_Credential,
         },
       });
 
@@ -52,7 +54,7 @@ const sendForgotEmailController = {
         </html>
       `;
       const mailOptions = {
-        from: "portal9589@gmail.com",
+        from:process.env.user_Credential,
         to: oldUser.email,
         subject: "Password Reset",
         html: htmlContent,

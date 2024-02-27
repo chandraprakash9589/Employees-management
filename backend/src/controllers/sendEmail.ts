@@ -5,6 +5,7 @@ import User from "../models/User";
 
 const sendMail = async () => {
   cron.schedule("31 13 * * *", async () => {
+    const BaseURL =process.env.BaseUrl;
     try {
       const users = await User.find();
       const tasks = await Task.find();
@@ -27,12 +28,12 @@ const sendMail = async () => {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "your emails",
-          pass: "your password",
+          user: process.env.user_Credential,
+          pass: process.env.pass_Credential,
         },
       });
 
-      const linkUrl = "http://localhost:3000/send_daily_status";
+      const linkUrl = `${BaseURL}/send_daily_status`;
 
       for (const user of usersWithoutStatus) {
         const formattedDate = yesterday.toLocaleDateString("en-US", {
@@ -61,7 +62,7 @@ const sendMail = async () => {
           `;
 
         const mailOptions = {
-          from: "portal9589@gmail.com",
+          from:process.env.user_Credential,
           to: user.email,
           subject: `Last Reminder :: You missed your daily status update on ${formattedDate}`,
           html: htmlContent,
