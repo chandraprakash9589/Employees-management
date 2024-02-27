@@ -23,7 +23,7 @@ const port = 4500;
 
 // Configure CORS middleware
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.BaseUrl,
   credentials: true,
 };
 app.use(cors(corsOptions));
