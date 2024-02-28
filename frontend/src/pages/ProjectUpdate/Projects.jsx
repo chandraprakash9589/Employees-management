@@ -3,10 +3,11 @@ import Layout from "../../components/Layout";
 import { Table } from "react-bootstrap";
 import { BaseURL } from "../../Utils/utils";
 import axios from "axios";
+import secureLocalStorage from "react-secure-storage";
 
 const Projects = () => {
   const [projectData, setProjectData] = useState([]);
-  const id = localStorage.getItem("userId");
+  const id = secureLocalStorage.getItem("userId");
 
   useEffect(() => {
     const fetchData = async () => {

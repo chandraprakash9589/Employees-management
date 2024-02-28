@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./Layout.css";
 import "../../style.css";
 import Header from "../Header/Header";
+import secureLocalStorage from "react-secure-storage";
 
 export default function Layout({ children, newIndex }) {
   const navigate = useNavigate();
   useEffect(() => {
-    const token = localStorage.getItem("jwtToken");
+    const token = secureLocalStorage.getItem("jwtToken");
     if (!token) {
       navigate("/login");
       return;

@@ -42,6 +42,10 @@ npm run start
 ### env
 
     create env file put this varables
+
     MONGODB_URL= ;
-    JWT_SECRET_KEY= TASK_MANAGMENT_TOKEN
+    JWT_SECRET_KEY= 
     PORT= 4500;
+    BaseUrl="";
+    user_Credential="";
+    pass_Credential="";

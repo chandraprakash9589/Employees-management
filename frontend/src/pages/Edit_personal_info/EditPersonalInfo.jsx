@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Profile from "../../assets/Profile.jpeg";
 import { FaCamera } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import secureLocalStorage from "react-secure-storage";
 const EditPersonalInfo = () => {
   const [isGetData, setIsGetData] = useState(false);
   const [errors, setErrors] = useState({
@@ -43,7 +44,7 @@ const EditPersonalInfo = () => {
     permanentAddress: "",
   });
   const navigate = useNavigate();
-  const userId = localStorage.getItem("userId");
+  const userId = secureLocalStorage.getItem("userId");
   const imgRef = useRef(null);
   useEffect(() => {
     const projectUpdate = async () => {
@@ -55,7 +56,7 @@ const EditPersonalInfo = () => {
           setIsGetData(true);
           const userInfo = userIndexData[0];
           setUserData(userInfo);
-          localStorage.setItem("profileImg", userInfo.image);
+          secureLocalStorage.setItem("profileImg", userInfo.image);
         }
       } catch (error) {
         alert("error:", error);
@@ -178,7 +179,7 @@ const EditPersonalInfo = () => {
       if (isGetData) {
         try {
           await axios.put(`${BaseURL}/editPesonalInfo/${userId}`, userData);
-          localStorage.setItem("profileImg", userData.image);
+          secureLocalStorage.setItem("profileImg", userData.image);
           toast.success("Information updated successfully!", {
             position: "top-right",
             autoClose: 2000,

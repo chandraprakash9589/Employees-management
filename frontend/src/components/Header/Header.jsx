@@ -13,23 +13,24 @@ import { FaMedal, FaRegClipboard } from "react-icons/fa";
 import Profile from "../../assets/Profile.jpeg";
 import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
+import secureLocalStorage from "react-secure-storage";
 
 const Header = ({ newIndex }) => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  const localToken = localStorage.getItem("jwtToken");
+  const localToken = secureLocalStorage.getItem("jwtToken");
   const [toggleNav, setToggleNav] = useState(false);
-  const firstName = localStorage.getItem("firstName");
-  const lastName = localStorage.getItem("lastName");
+  const firstName = secureLocalStorage.getItem("firstName");
+  const lastName = secureLocalStorage.getItem("lastName");
   const [userStatus, setUserStatus] = useState([]);
-  const role = localStorage.getItem("role");
-  const profileImg = localStorage.getItem("profileImg");
+  const role = secureLocalStorage.getItem("role");
+  const profileImg = secureLocalStorage.getItem("profileImg");
   const [data, setData] = useState({
     Status: "",
     Hours: "",
     Note: "",
   });
-  const userId = localStorage.getItem("userId");
+  const userId = secureLocalStorage.getItem("userId");
 
   useEffect(() => {
     if (!localToken) {
@@ -52,9 +53,9 @@ const Header = ({ newIndex }) => {
 
   const logout = async () => {
     try {
-      const token = localStorage.getItem("jwtToken");
+      const token = secureLocalStorage.getItem("jwtToken");
       if (token) {
-        localStorage.clear();
+        secureLocalStorage.clear();
         toast.success("Logout successful");
       }
       navigate("/login");

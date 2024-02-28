@@ -8,6 +8,7 @@ import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
 import moment from "moment";
 import { toast, ToastContainer } from "react-toastify";
+import secureLocalStorage from "react-secure-storage";
 export const ApplyLeave = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -102,10 +103,10 @@ export const ApplyLeave = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("jwtToken");
+    const token = secureLocalStorage.getItem("jwtToken");
 
     if (validationCheck()) {
-      const getUserID = localStorage.getItem("userId");
+      const getUserID = secureLocalStorage.getItem("userId");
       const mail = mailTo.map((val) => val.label);
       const leaveData = {
         email: mail,

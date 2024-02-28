@@ -15,6 +15,7 @@ import { FaPersonCircleCheck } from "react-icons/fa6";
 import { CiClock2 } from "react-icons/ci";
 import { IoIosWarning } from "react-icons/io";
 import moment from "moment";
+import secureLocalStorage from "react-secure-storage";
 
 const SendMyDailyStatus = () => {
   const [showModal, setShowModal] = useState(false);
@@ -41,7 +42,7 @@ const SendMyDailyStatus = () => {
   ]);
 
   const [errors, setErrors] = useState({});
-  const userId = localStorage.getItem("userId");
+  const userId = secureLocalStorage.getItem("userId");
   const previosDate = moment().subtract(1, "days");
 
   const validationCheck = useCallback(() => {
@@ -125,7 +126,7 @@ const SendMyDailyStatus = () => {
 
   const handleUpdate = async (e, completed) => {
     e.preventDefault();
-    const token = localStorage.getItem("jwtToken");
+    const token = secureLocalStorage.getItem("jwtToken");
 
     if (validationCheck()) {
       try {
@@ -188,7 +189,7 @@ const SendMyDailyStatus = () => {
 
   useEffect(() => {
     const projectUpdate = async () => {
-      const getUserID = localStorage.getItem("userId");
+      const getUserID = secureLocalStorage.getItem("userId");
       try {
         const response = await axios.get(`${BaseURL}/project/${getUserID}`);
         const projects = response.data.projects;
@@ -207,7 +208,7 @@ const SendMyDailyStatus = () => {
   const handleStatusSubmit = async (e, completed) => {
     e.preventDefault();
 
-    const token = localStorage.getItem("jwtToken");
+    const token = secureLocalStorage.getItem("jwtToken");
     if (validationCheck()) {
       try {
         const newTask = {

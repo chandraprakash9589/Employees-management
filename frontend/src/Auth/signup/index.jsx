@@ -7,6 +7,7 @@ import { Button, Form } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import Layout from "./../../components/Layout/index";
 import "./signup.css";
+import secureLocalStorage from "react-secure-storage";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCPassword, setShowCPassword] = useState(false);
@@ -110,7 +111,7 @@ const Signup = () => {
           autoClose: 2000,
         });
         if (response.data) {
-          localStorage.setItem("jwtToken", response.data.token);
+          secureLocalStorage.setItem("jwtToken", response.data.token);
         }
         setRegistrationData({
           email: "",

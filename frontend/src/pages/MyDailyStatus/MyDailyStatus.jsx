@@ -7,13 +7,14 @@ import "../index.css";
 import StatusTable from "./MyStatusTable";
 import { Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import secureLocalStorage from "react-secure-storage";
 
 export const MyDailyStatus = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const navigate = useNavigate();
-  const token = localStorage.getItem("jwtToken");
+  const token = secureLocalStorage.getItem("jwtToken");
   useEffect(() => {
     const getDailyStatus = async () => {
       try {

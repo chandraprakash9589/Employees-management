@@ -9,11 +9,12 @@ import { useNavigate } from "react-router-dom";
 import { totalMonths } from "../../Utils/constant";
 import { leaveType } from "../../Utils/constant";
 import "../index.css";
+import secureLocalStorage from "react-secure-storage";
 
 export const MyLeave = () => {
-  const firstName = localStorage.getItem("firstName");
-  const lastName = localStorage.getItem("lastName");
-  const getUserID = localStorage.getItem("userId");
+  const firstName = secureLocalStorage.getItem("firstName");
+  const lastName = secureLocalStorage.getItem("lastName");
+  const getUserID = secureLocalStorage.getItem("userId");
   const [data, setData] = useState([]);
   const [monthlyLeave, setmonthlyLeave] = useState(0);
   const [compoff, setCompOff] = useState(0);
@@ -51,7 +52,7 @@ export const MyLeave = () => {
   }, [data.length]);
 
   const getLeaves = async () => {
-    const token = localStorage.getItem("token");
+    const token = secureLocalStorage.getItem("token");
     try {
       const response = await axios.get(`${BaseURL}/leaveSection/${getUserID}`, {
         headers: { Authorization: `Bearer ${token}` },

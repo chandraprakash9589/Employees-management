@@ -5,12 +5,13 @@ import Layout from "../../components/Layout";
 import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
 import { CiSearch } from "react-icons/ci";
+import secureLocalStorage from "react-secure-storage";
 
 const Tests = () => {
   const [tests, setTests] = useState([]);
   const [search, setSearch] = useState("");
 
-  const id = localStorage.getItem("userId");
+  const id = secureLocalStorage.getItem("userId");
 
   useEffect(() => {
     const fetchCalls = async () => {

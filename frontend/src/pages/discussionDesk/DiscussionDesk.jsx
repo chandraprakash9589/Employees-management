@@ -7,10 +7,11 @@ import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
 import { MdEdit } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
+import secureLocalStorage from "react-secure-storage";
 
 export const DiscussionDesk = () => {
   const [data, setData] = useState([]);
-  const getUserID = localStorage.getItem("userId");
+  const getUserID = secureLocalStorage.getItem("userId");
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -18,7 +19,7 @@ export const DiscussionDesk = () => {
   }, []);
 
   const getDiscussionData = async () => {
-    const token = localStorage.getItem("token");
+    const token = secureLocalStorage.getItem("token");
     try {
       const res = await axios.get(`${BaseURL}/discussion_desk/${getUserID}`, {
         headers: { Authorization: `Bearer ${token}` },

@@ -6,10 +6,11 @@ import Layout from "../../components/Layout";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
+import secureLocalStorage from "react-secure-storage";
 
 export const EditSkills = () => {
   const [skills, setSkills] = useState([]);
-  const userId = localStorage.getItem("userId");
+  const userId = secureLocalStorage.getItem("userId");
   useEffect(() => {
     const fetchData = async () => {
       try {

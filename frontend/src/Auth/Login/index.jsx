@@ -5,6 +5,7 @@ import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
 import { ToastContainer, toast } from "react-toastify";
+import  secureLocalStorage  from  "react-secure-storage";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -24,12 +25,12 @@ const Login = () => {
     try {
       const response = await axios.post(`${BaseURL}/auth/login`, loginData);
       if (response.data) {
-        localStorage.setItem("jwtToken", response.data.token);
-        localStorage.setItem("role", response.data.user.role);
-        localStorage.setItem("firstName", response.data.user.firstName);
-        localStorage.setItem("lastName", response.data.user.lastName);
-        localStorage.setItem("userId", response.data.user._id);
-        localStorage.setItem("password", loginData.password);
+        secureLocalStorage.setItem("jwtToken", response.data.token);
+        secureLocalStorage.setItem("role", response.data.user.role);
+        secureLocalStorage.setItem("firstName", response.data.user.firstName);
+        secureLocalStorage.setItem("lastName", response.data.user.lastName);
+        secureLocalStorage.setItem("userId", response.data.user._id);
+        secureLocalStorage.setItem("password", loginData.password);
         navigate("/");
       }
     } catch (error) {

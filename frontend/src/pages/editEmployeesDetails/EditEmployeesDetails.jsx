@@ -8,6 +8,7 @@ import axios from "axios";
 import { BaseURL } from "../../Utils/utils";
 import { ToastContainer, toast } from "react-toastify";
 import Layout from "../../components/Layout";
+import secureLocalStorage from "react-secure-storage";
 export const EditEmployeesDetails = () => {
   const navigate = useNavigate();
   const [fetchData, setFetchData] = useState(false);
@@ -84,8 +85,8 @@ export const EditEmployeesDetails = () => {
     }));
   };
 
-  const id = localStorage.getItem("userId");
-  const currentPassword = localStorage.getItem("password");
+  const id = secureLocalStorage.getItem("userId");
+  const currentPassword = secureLocalStorage.getItem("password");
 
   const getUser = async () => {
     try {
@@ -120,9 +121,9 @@ export const EditEmployeesDetails = () => {
         };
         try {
           await axios.put(`${BaseURL}/users/UpdateUserDetails/${id}`, data);
-          localStorage.setItem("password", data.password);
-          localStorage.setItem("lastName", data.lastName);
-          localStorage.setItem("firstName", data.firstName);
+          secureLocalStorage.setItem("password", data.password);
+          secureLocalStorage.setItem("lastName", data.lastName);
+          secureLocalStorage.setItem("firstName", data.firstName);
 
           toast.success("Employee Details Updated Successfully...", {
             position: "top-right",

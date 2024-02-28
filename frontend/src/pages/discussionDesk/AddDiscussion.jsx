@@ -7,6 +7,7 @@ import { BaseURL } from "../../Utils/utils";
 import { ToastContainer, toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
+import secureLocalStorage from "react-secure-storage";
 
 export const AddDiscussion = () => {
   const navigate = useNavigate();
@@ -83,8 +84,8 @@ export const AddDiscussion = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("jwtToken");
-    const userID = localStorage.getItem("userId");
+    const token = secureLocalStorage.getItem("jwtToken");
+    const userID = secureLocalStorage.getItem("userId");
     if (validationCheck()) {
       if (editDataID) {
         try {

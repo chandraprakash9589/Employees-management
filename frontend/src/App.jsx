@@ -35,9 +35,10 @@ import TestsCalls, {
 } from "./pages/adminPanel/testscalls/TestsCalls";
 import ViewTests, { ShowTests } from "./pages/adminPanel/testscalls/ViewTests";
 import ViewCalls, { ShowCalls } from "./pages/adminPanel/testscalls/ViewCalls";
+import secureLocalStorage from "react-secure-storage";
 
 function App() {
-  const role = localStorage.getItem("role");
+  const role = secureLocalStorage.getItem("role");
   return (
     <div
       style={{
